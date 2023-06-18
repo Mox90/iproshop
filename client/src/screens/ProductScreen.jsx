@@ -1,9 +1,7 @@
-//import { useEffect, useState } from 'react'
 import { useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-//import axios from 'axios'
 import { useGetProductByIdQuery } from '../slices/productsApiSlice'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -11,16 +9,6 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../slices/cartSlice'
 
 const ProductScreen = () => {
-  // const [product, setProduct] = useState({})
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     const { data } = await axios.get(`/api/products/${productId}`)
-  //     setProduct(data)
-  //   }
-
-  //   fetchProduct()
-  // }, [productId])
-
   const { id: productId } = useParams()
 
   const dispatch = useDispatch()
