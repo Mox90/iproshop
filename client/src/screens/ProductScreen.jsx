@@ -19,13 +19,12 @@ const ProductScreen = () => {
   const { data: product, isLoading, error } = useGetProductByIdQuery(productId)
 
   const addToCartHandler = () => {
-    console.log(product) // It gives the product as expected.
     dispatch({ ...addToCart(product, qty) })
     navigate('/')
   }
 
-  //console.log(product) --> Why Undefined?
-  //console.log([...Array(product.countInStock).keys()]) --> since product is undefined so does countInStock
+  console.log(product)
+  //console.log([...Array(product?.countInStock).keys()])
 
   return (
     <>
