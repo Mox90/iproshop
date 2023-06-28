@@ -19,12 +19,11 @@ const ProductScreen = () => {
   const { data: product, isLoading, error } = useGetProductByIdQuery(productId)
 
   const addToCartHandler = () => {
-    dispatch({ ...addToCart(product, qty) })
-    navigate('/')
+    dispatch(addToCart({ ...product, qty }))
+    navigate('/cart')
   }
-
-  console.log(product)
-  //console.log([...Array(product?.countInStock).keys()])
+  //console.log(product)
+  // console.log([...Array(product?.countInStock).keys()])
 
   return (
     <>
@@ -110,7 +109,7 @@ const ProductScreen = () => {
                   <ListGroup.Item>
                     <Button
                       className='btn-block'
-                      type='buttn'
+                      type='button'
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
                     >
