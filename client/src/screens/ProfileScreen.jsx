@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { FaTimes, FaCheck } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import { useProfileMutation } from '../slices/usersApiSlice'
 import { setCredentials } from '../slices/authSlice'
 import { useGetMyOrdersQuery } from '../slices/ordersApiSlice'
@@ -55,8 +55,6 @@ const ProfileScreen = () => {
       }
     }
   }
-
-  console.log(orders)
 
   return (
     <Row>
